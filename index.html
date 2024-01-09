@@ -1,51 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="calculator-body">
-            <div class="display">
-                <div class="text-show"></div>
-                <div class="dispAns"></div>
-            </div>
-            <div class="buttons">
-                <div class="row">
-                    <div class="button" id="7"><button>7</button></div>
-                    <div class="button" id="8"><button>8</button></div>
-                    <div class="button" id="9"><button>9</button></div>
-                    <div class="button" id="del" style="background-color: rgb(86, 207, 86);"><button>DEL</button></div>
-                    <div class="button" id="ac" style="background-color: rgb(86, 207, 86);"><button>AC</button></div>
-                </div>
-                <div class="row">
-                    <div class="button" id="4"><button>4</button></div>
-                    <div class="button" id="5"><button>5</button></div>
-                    <div class="button" id="6"><button>6</button></div>
-                    <div class="button" id="*" style="background-color: rgb(232, 186, 20);"><button>&times;</button></div>
-                    <div class="button" id="/" style="background-color: rgb(232, 186, 20);"><button>/</button></div>
-                </div>
-                <div class="row">
-                    <div class="button" id="1"><button>1</button></div>
-                    <div class="button" id="2"><button>2</button></div>
-                    <div class="button" id="3"><button>3</button></div>
-                    <div class="button" id="+" style="background-color: rgb(232, 186, 20);"><button>+</button></div>
-                    <div class="button" id="-" style="background-color: rgb(232, 186, 20);"><button>-</button></div>
-                </div>
-                <div class="row">
-                    <div class="button" id="0"><button>0</button></div>
-                    <div class="button" id="."><button>.</button></div>
-                    <div class="button" id="pi"><button>&pi;</button></div>
-                    <div class="button" id="ans"><button>Ans</button></div>
-                    <div class="button" id="=" style="background-color: rgb(232, 186, 20);"><button>=</button></div>
-                </div>
-            </div>
+      <div class="calculator-body">
+        <div class="display">
+          <div class="text-show"></div>
+          <div class="dispAns"></div>
         </div>
+        <div class="history-buttons">
+          <div class="hist-button-container">
+            <button class="history-button up">
+              <i class="icon fa-solid fa-caret-up"></i>
+            </button>
+            <button class="history-button down">
+              <i class="icon fa-solid fa-caret-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="buttons" id="buttons">
+          <div class="row">
+            <div class="button" id="7"><button>7</button></div>
+            <div class="button" id="8"><button>8</button></div>
+            <div class="button" id="9"><button>9</button></div>
+            <div
+              class="button"
+              id="del"
+              style="background-color: rgb(86, 207, 86)"
+            >
+              <button id="DEL">DEL</button>
+            </div>
+            <div
+              class="button"
+              id="ac"
+              style="background-color: rgb(86, 207, 86)"
+            >
+              <button id="AC">AC</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="button" id="4"><button>4</button></div>
+            <div class="button" id="5"><button>5</button></div>
+            <div class="button" id="6"><button>6</button></div>
+            <div
+              class="button"
+              id="*"
+              style="background-color: rgb(232, 186, 20)"
+            >
+              <button id="X">&times;</button>
+            </div>
+            <div
+              class="button"
+              id="/"
+              style="background-color: rgb(232, 186, 20)"
+            >
+              <button id="by">/</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="button" id="1"><button>1</button></div>
+            <div class="button" id="2"><button>2</button></div>
+            <div class="button" id="3"><button>3</button></div>
+            <div
+              class="button"
+              id="+"
+              style="background-color: rgb(232, 186, 20)"
+            >
+              <button id="plus">+</button>
+            </div>
+            <div
+              class="button"
+              id="-"
+              style="background-color: rgb(232, 186, 20)"
+            >
+              <button id="minus">-</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="button" id="0"><button>0</button></div>
+            <div class="button" id="."><button>.</button></div>
+            <div class="button" id="pi"><button>&pi;</button></div>
+            <div class="button" id="ans"><button>Ans</button></div>
+            <div
+              class="button"
+              id="="
+              style="background-color: rgb(232, 186, 20)"
+            >
+              <button id="equals">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
