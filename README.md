@@ -17,7 +17,7 @@ Mini Calculator using HTML,CSS,JavaScript
 Clone this project with git clone command in the terminal
 
 ```bash
-git clone https://github.com/codec404/PortFolio
+git clone https://github.com/codec404/mini-Calculator.git
 ```
 Run using `live server`
 ## Deployment
@@ -33,6 +33,8 @@ The above link leads to the official MDN documentation page. It will be helpful 
 ## Features
 
 - Basic Calculation with storing answer capability
+- On pressing up-arrow key we can fetch the all the previous calculations that we performed
+- On pressing the down-arrow button we can traverse back to our last computed calculation
 
 
 
