@@ -101,6 +101,7 @@ getButton.forEach((val) => {
         dispString = "";
         disp.innerHTML = "";
         ansdisp.innerHTML = "";
+        index = Math.max(hist.length, 0);
       } else if (val.id == "*") {
         calcString += val.id;
         dispString += "x";
