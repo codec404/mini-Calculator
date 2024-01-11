@@ -1,24 +1,33 @@
-// console.log("Welcome");
-const hist = [];
-let calcString = "";
+// console.log("Calculate");
+
 const pi = 3.14159265359;
+
+//STRINGS TO STORE THE DISPLAY, ANS AND THE MAIN CALCULATION STRING
+let calcString = "";
 let dispString = "";
 let ansString = "";
-let disp = document.querySelector(".text-show");
-let ansdisp = document.querySelector(".dispAns");
-let getButton = document.querySelectorAll(".button");
-// console.log(disp.innerHTML.length);
+
+// STORE THE HISTORY
+const hist = [];
+
+let disp = document.querySelector(".text-show"); // INPUT DISPLAY
+let ansdisp = document.querySelector(".dispAns"); // ANSWER DISPLAY
+let getButton = document.querySelectorAll(".button"); // GETTING THE BUTTONS
+
+//TRAVERSE THE HISTORY ARRAY
+let index = Math.max(hist.length - 1, 0);
+
 if (disp.innerHTML.length >= 20) {
   alert("Only 10 digit calculation is allowed for one operator!!!");
   disp.innerHTML = "";
 }
-let index = Math.max(hist.length - 1, 0);
 
-let histButtonUp = document.querySelector(".up");
-let histButtonDown = document.querySelector(".down");
+let histButtonUp = document.querySelector(".up"); // GO TO CALCULATION HISTORY (LATEST --> OLDEST) ONE-BY-ONE
+let histButtonDown = document.querySelector(".down");// COMEBACK TO THE PRESENT CALCULATION RESULT ONE-BY-ONE
 
 const handleHistUp = () => {
   if (hist.length && index >= 0) {
+    dispString = "";
     index = Math.max(index - 1, 0);
     disp.innerHTML = hist[index].dispHist;
     ansdisp.innerHTML = hist[index].ansHist;
@@ -50,7 +59,9 @@ getButton.forEach((val) => {
       if (val.id == "=") {
         try {
           if (calcString.length) {
-            calcString = eval(calcString);
+            calcString = eval(calcString); //EVALUATE THE CALCULATION STRING
+
+            // DIVISON BY ZERO
             if (
               calcString == "Infinity" ||
               calcString == "-Infinity" ||
@@ -67,11 +78,12 @@ getButton.forEach((val) => {
             createHistory.ansHist = ansString;
             hist.push(createHistory);
             index = hist.length - 1;
+
+            //EMPTY THE STRINGS FOR NEXT CALCULATION
             dispString = "";
             calcString = "";
           }
         } catch (err) {
-          //   console.log(err);
           if (err.message == "Division by zero") {
             disp.innerHTML = "";
             ansdisp.innerHTML = "Division by zero";
